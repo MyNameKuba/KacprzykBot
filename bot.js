@@ -120,7 +120,8 @@ client.on("message", msg => {
     else if (
       msg.content.match(/nie umiem/i) ||
       msg.content.match(/nwm/i) ||
-      msg.content.match(/nie wiem/i)
+      msg.content.match(/nie wiem/i) ||
+      msg.content.match(/nie pamiętam/i)
     )
       msg.channel.send("Siadaj, niedostateczny");
     //Niedostateczny
