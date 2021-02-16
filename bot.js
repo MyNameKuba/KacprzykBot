@@ -75,8 +75,8 @@ client.on("message", msg => {
         msg.channel.send("Śliczne!");
       //Github
       else if (
-        msg.content.match(/czarku pomoc/i) ||
-        msg.content.match(/cezary pomoc/i)
+        msg.content == "czarku pomoc" ||
+        msg.content == "cezary pomoc"
       ) {
         msg.channel.send("To wszystko co znalazłem:");
         msg.channel.send("https://github.com/MyNameKuba/KacprzykBot");
@@ -144,7 +144,7 @@ client.on("message", msg => {
       msg.content.match(/wieta/i)
     ) {
       msg.channel.send("https://www.matmana6.pl/wzory-vietea");
-    } else if (msg.content.match(/czarku/i) || msg.content.match(/cezary/i)) {
+    } else if (msg.content==/czarku/i || msg.content==/cezary/i) {
       msg.channel.send(los(slucham));
     }
   }
