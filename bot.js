@@ -43,7 +43,7 @@ function los(slowa) {
 client.on("ready", readyDiscord);
 function readyDiscord() {
   console.log("o działa");
-  client.users.cache.get("282188744696659969").send("już"); ///DM ThePhaseless
+  client.users.get("282188744696659969").send("Już")
   client.user.setActivity("okolice za oknem", { type: "WATCHING" });
 }
 
