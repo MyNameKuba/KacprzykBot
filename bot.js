@@ -73,6 +73,14 @@ client.on("message", msg => {
         msg.content.match(/i co/i)
       )
         msg.channel.send("Śliczne!");
+      //Github
+      else if (
+        msg.content.match(/czarku pomoc/i) ||
+        msg.content.match(/cezary pomoc/i)
+      ) {
+        msg.channel.send("To wszystko co znalazłem:");
+        msg.channel.send("https://github.com/MyNameKuba/KacprzykBot");
+      }
       //Mood Check
       else if (
         msg.content.match(/jak sie czujesz/i) ||
@@ -94,7 +102,7 @@ client.on("message", msg => {
       ) {
         msg.react("🥰");
       }
-      //Wycoski check2 
+      //Wycoski check2
       else if (
         msg.content.match(/wysocki/i) ||
         msg.content.match(/Michał/i) ||
@@ -115,7 +123,7 @@ client.on("message", msg => {
       msg.content.match(/nie wiem/i)
     )
       msg.channel.send("Siadaj, niedostateczny");
-      //Niedostateczny
+    //Niedostateczny
     else if (
       msg.content.match(/wzory trygonometryczne/i) ||
       msg.content.match(/trygonometria/i) ||
@@ -139,69 +147,49 @@ client.on("message", msg => {
     } else if (msg.content.match(/czarku/i) || msg.content.match(/cezary/i)) {
       msg.channel.send(los(slucham));
     }
-    else if (msg.content.match(/czarku pomoc/i) || msg.content.match(/cezary pomoc/i)) {
-      msg.channel.send("To wszystko co znalazłem:");
-      msg.channel.send("https://github.com/MyNameKuba/KacprzykBot");
-    }
   }
 });
 
+const express = require("express");
+const cmd = require("node-cmd");
+const crypto = require("crypto");
+const bodyParser = require("body-parser");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const express = require('express')
-const cmd = require('node-cmd')
-const crypto = require('crypto')
-const bodyParser = require('body-parser')
-
-const app = express()
-app.use(bodyParser.json())
+const app = express();
+app.use(bodyParser.json());
 
 const verifySignature = (req, res, next) => {
-  const payload = JSON.stringify(req.body)
-  const hmac = crypto.createHmac('sha1', process.env.GITHUB_SECRET)
-  const digest = 'sha1=' + hmac.update(payload).digest('hex')
-  const checksum = req.headers['x-hub-signature']
+  const payload = JSON.stringify(req.body);
+  const hmac = crypto.createHmac("sha1", process.env.GITHUB_SECRET);
+  const digest = "sha1=" + hmac.update(payload).digest("hex");
+  const checksum = req.headers["x-hub-signature"];
 
   if (!checksum || !digest || checksum !== digest) {
-    return res.status(403).send('auth failed')
+    return res.status(403).send("auth failed");
   }
 
-  return next()
-}
+  return next();
+};
 
 // Github webhook listener
-app.post('/git', verifySignature, (req, res) => {
-  if (req.headers['x-github-event'] == 'push') {
-    cmd.get('bash git.sh', (err, data) => {
-      if (err) return console.log(err)
-      console.log(data)
-      return res.status(200).send(data)
-    })
-  } else if (req.headers['x-github-event'] == 'ping') {
-    return res.status(200).send('PONG')
+app.post("/git", verifySignature, (req, res) => {
+  if (req.headers["x-github-event"] == "push") {
+    cmd.get("bash git.sh", (err, data) => {
+      if (err) return console.log(err);
+      console.log(data);
+      return res.status(200).send(data);
+    });
+  } else if (req.headers["x-github-event"] == "ping") {
+    return res.status(200).send("PONG");
   } else {
-    return res.status(200).send('Unsuported Github event. Nothing done.')
+    return res.status(200).send("Unsuported Github event. Nothing done.");
   }
-})
+});
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
-})
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/views/index.html");
+});
 
 app.listen(process.env.PORT, () => {
-  console.log(`Your app is listening on port ${process.env.PORT}`)
-})
+  console.log(`Your app is listening on port ${process.env.PORT}`);
+});
