@@ -139,6 +139,10 @@ client.on("message", msg => {
     } else if (msg.content.match(/czarku/i) || msg.content.match(/cezary/i)) {
       msg.channel.send(los(slucham));
     }
+    else if (msg.content.match(/czarku pomoc/i) || msg.content.match(/cezary pomoc/i)) {
+      msg.channel.send("To wszystko co znalazłem:");
+      msg.channel.send("https://github.com/MyNameKuba/KacprzykBot");
+    }
   }
 });
 
