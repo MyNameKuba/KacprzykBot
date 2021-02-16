@@ -43,7 +43,7 @@ function los(slowa) {
 client.on("ready", readyDiscord);
 function readyDiscord() {
   console.log("o działa");
-  ///client.users.cache.get("282188744696659969").send("Włączyłem się"); ///DM ThePhaseless
+  client.users.cache.get("282188744696659969").send("już"); ///DM ThePhaseless
   client.user.setActivity("okolice za oknem", { type: "WATCHING" });
 }
 
@@ -68,6 +68,8 @@ client.on("message", msg => {
         msg.mentions.has("404341103572025361")
       )
         msg.channel.send("Nie.");
+        else msg.channel.send(los(lubisz));
+      }
       else if (
         msg.content.match(/co o tym sądzisz/i) ||
         msg.content.match(/i co/i)
@@ -112,8 +114,7 @@ client.on("message", msg => {
       } else if (msg.content.match(/ile to/i) || msg.content.match(/policz/i))
         msg.channel.send(los(ileto));
       //Opinia2mat
-      else msg.channel.send(los(lubisz));
-    } else if (msg.mentions.has("810790057459187733"))
+      else if (msg.mentions.has("810790057459187733"))
       msg.channel.send(
         "Czas, który spędziłeś na oznaczenie mnie, mogłeś poświęcić na naukę matematyki. Może już Cię ten profil nie interesuje?! Budowa układu wydalniczego żaby jest baaardzo ciekawa..."
       );
@@ -148,7 +149,7 @@ client.on("message", msg => {
       msg.channel.send(los(slucham));
     }
   }
-});
+);
 
 const express = require("express");
 const cmd = require("node-cmd");
