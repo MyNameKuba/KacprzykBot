@@ -14,7 +14,8 @@ const lubisz = [
   "Nie",
   "To nie twoja sprawa",
   "Skąd mam to wiedzieć",
-  "Powinieneś mieć to w 2. klasie podstawówki"
+  "Powinieneś mieć to w 2. klasie podstawówki",
+  "Mhm..."
 ];
 const ileto = [
   "Nie potrzebujesz tego żeby zrobić to zadanie. Jest sprytniejszy sposób.",
