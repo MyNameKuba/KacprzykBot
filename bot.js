@@ -149,7 +149,7 @@ client.on("message", msg => {
       msg.channel.send(los(slucham));
     }
   }
-);
+});
 
 const express = require("express");
 const cmd = require("node-cmd");
