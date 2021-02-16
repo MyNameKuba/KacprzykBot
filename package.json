@@ -1,12 +1,13 @@
 {
-  "name": "glitch-github-sync",
+  "name": "KacprzykBot",
   "version": "1.0.0",
-  "description": "Glitch Github Sync",
-  "main": "server.js",
+  "description": "Bot z najlepszymi tekstami CK z 1LO (uwielbia Michała W.)",
+  "main": "bot.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start": "node bot.js"
   },
-  "author": "Natanael",
+  "author": "Phaseless",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
