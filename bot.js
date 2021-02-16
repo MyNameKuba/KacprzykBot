@@ -43,7 +43,6 @@ function los(slowa) {
 client.on("ready", readyDiscord);
 function readyDiscord() {
   console.log("o działa");
-  client.users.get("282188744696659969").send("Już")
   client.user.setActivity("okolice za oknem", { type: "WATCHING" });
 }
 
@@ -81,7 +80,7 @@ client.on("message", msg => {
         msg.content.match(/cezary pomoc/i)
       ) {
         msg.channel.send("To wszystko co znalazłem:");
-        msg.channel.send("https://github.com/MyNameKuba/KacprzykBot");
+        msg.channel.send("https://kacprzykbot.glitch.me/");
       }
       //Mood Check
       else if (
