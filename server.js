@@ -34,13 +34,7 @@ app.post("/git", verifySignature, (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
-});
-
-app.get("/w3.css", (req, res) => {
-  res.sendFile(__dirname + "/views/w3.css");
-});
+app.use(express.static(__dirname + "/views"));
 
 app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${process.env.PORT}`);

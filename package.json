@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "author": "Phaseless",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": "14.15.5"
   },
