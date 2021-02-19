@@ -144,6 +144,8 @@ client.on("message", msg => {
       msg.channel.send("https://www.matmana6.pl/wzory-vietea");
     } else if (msg.content=="czarku" || msg.content=="cezary") {
       msg.channel.send(los(slucham));
+    } else if (msg.content.match(/jg/i)) {
+      msg.channel.send("JG 100% +1 byczq");
     }
   }
 });
