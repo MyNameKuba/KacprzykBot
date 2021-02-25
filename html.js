@@ -1,10 +1,11 @@
 const app = require("express")();
+const fs = require('fs');
 
 const PORT = process.env.PORT || 3000;
 
 app.get("", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
-    fs.createReadStream(html/index.html).pipe(res);
+    fs.createReadStream("html/index.html").pipe(res);
 });
 
 app.listen(PORT, () => {
