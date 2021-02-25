@@ -1,2 +1,4 @@
-res.sendFile(__dirname + "/views/index.html");
-res.sendFile(__dirname + "/views/w3.css");
+const app = express();
+app.get("/", (request, response) => {
+  response.sendFile(__dirname + "/views/index.html");
+});
