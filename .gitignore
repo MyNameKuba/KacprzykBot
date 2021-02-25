@@ -1,3 +1,3 @@
-.env
+SECRETS.env
 node_modules
 Tests
