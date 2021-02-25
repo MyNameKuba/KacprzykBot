@@ -77,7 +77,7 @@ client.on("message", msg => {
         msg.content.match(/cezary pomoc/i)
       ) {
         msg.channel.send("To wszystko co znalazłem:");
-        msg.channel.send("https://kacprzykbot.glitch.me/");
+        msg.channel.send("https://kacprzykbot.herokuapp.com");
       }
       //Mood Check
       else if (
