@@ -152,5 +152,3 @@ client.on("message", msg => {
 
 console.log("Logowanie się jako bot...");
 client.login(process.env.TOKEN);
-console.log("Uruchamianie serwera www...");
-require('./server.js');
