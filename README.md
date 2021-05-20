@@ -1,3 +1,6 @@
+# PROJEKT ZMIENIŁ STRONĘ!
+ [Nowa strona projektu](https://github.com/ThePhaseless/KacprzykBot-Heroku)
+
 # KacprzykBot
 
 Stworzony w celach edukacyjnych, wykorzystywany również humorystycznie na serwerze Discord prywatnej społeczności.
